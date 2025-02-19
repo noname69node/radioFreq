@@ -11,6 +11,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Frequency routes initialized");
+});
 app.use("/api/frequencies", frequencyRoutes);
 app.use("/api/auth", authRoutes);
 // app.use("/api/auth", authRoutes);
