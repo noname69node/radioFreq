@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ES2015",
     "module": "CommonJS",
-    "outDir": "dist",
+    "outDir": "app/dist",
     "rootDir": "src",
     "strict": true,
     "esModuleInterop": true
