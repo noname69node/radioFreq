@@ -1,21 +1,7 @@
-import express from "express";
-import cors from "cors";
-import dotenv from "dotenv";
-import frequencyRoutes from "./routes/frequency.routes";
-import authRoutes from "./routes/admin";
-// import authRoutes from "./routes/auth.routes";
+import app from "./app";
 
-dotenv.config();
+const PORT = process.env.PORT || 3000;
 
-const app = express();
-app.use(cors());
-app.use(express.json());
-
-app.get("/", (req, res) => {
-  res.send("Frequency routes initialized");
+app.listen(PORT as number, "0.0.0.0", () => {
+  console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
-app.use("/api/frequencies", frequencyRoutes);
-app.use("/api/auth", authRoutes);
-// app.use("/api/auth", authRoutes);
-
-export default app;

@@ -13,6 +13,9 @@ dotenv_1.default.config();
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
+app.get("/", (req, res) => {
+    res.send("Frequency routes initialized");
+});
 app.use("/api/frequencies", frequency_routes_1.default);
 app.use("/api/auth", admin_1.default);
 // app.use("/api/auth", authRoutes);
