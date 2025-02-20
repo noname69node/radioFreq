@@ -17,7 +17,8 @@ export const authenticateAdmin = async (
     console.log(decodedToken);
 
     const allowedEmails = ["noname69ai@gmail.com", "example@example.com"];
-    if (!allowedEmails.includes(decodedToken.email)) {
+    
+    if (!decodedToken.email || !allowedEmails.includes(decodedToken.email)) {
       res.status(403).json({ message: "Forbidden" });
       return;
     }
