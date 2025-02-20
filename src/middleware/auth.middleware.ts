@@ -15,7 +15,7 @@ export const authenticateAdmin = async (
 
     const decodedToken = await auth.verifyIdToken(token);
     console.log(decodedToken);
-    if (decodedToken.email !== "noname69ai@gmail.com") {
+    if (decodedToken.email !== "noname69ai@gmail.com" || decodedToken.email !== "nonamenodejs@gmail.com") {
       res.status(403).json({ message: "Forbidden" });
       return;
     }
