@@ -10,7 +10,7 @@ const router = express.Router();
 
 router.post("/", authenticateAdmin, addFrequency);
 router.get("/latest", getLatestFrequency);
-router.get("/all", authenticateAdmin, getAllFrequencies);
+router.get("/all", getAllFrequencies);
 router.get("/", (req, res) => {
   res.send("Frequency routes initialized");
 });
